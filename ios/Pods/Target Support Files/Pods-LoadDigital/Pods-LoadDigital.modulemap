@@ -1,0 +1,6 @@
+module Pods_LoadDigital {
+  umbrella header "Pods-LoadDigital-umbrella.h"
+
+  export *
+  module * { export * }
+}
