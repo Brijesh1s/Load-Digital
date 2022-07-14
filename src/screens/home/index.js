@@ -1,21 +1,21 @@
 import { FlatList, TouchableOpacity, SafeAreaView, Text } from "react-native";
 import React, { useEffect, useState } from "react";
-import { getCountriesData } from "../utils/queries";
-import globalStyles from "../styles/globalStyles";
+import globalStyles from "../../styles/globalStyles";
 import { Card, Title, Paragraph } from "react-native-paper";
-import Header from "../components/Header";
-import FilterCountries from "../components/FilterCountries";
-import Search from "../components/Search";
-import Loader from "../components/Loader";
+import Header from "../../components/Header";
+import Filter from "../../components/Filter";
+import Search from "../../components/Search";
+import Loader from "../../components/Loader";
 
-const HomeScreen = ({ navigation }) => {
+const Home = ({ navigation }) => {
   const [data, setData] = useState();
   const [countriesDta, setCountriesData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [regions, setRegions] = useState();
 
   useEffect(() => {
-    getCountriesData()
+    fetch('https://restcountries.com/v3.1/all')
+      .then((res) => res.json())
       .then((data) => {
         setCountriesData(data);
         setData(data);
@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation }) => {
       <Header />
       {data && <Search data={data} onSearch={(data) => handleSearch(data)} />}
       {regions && (
-        <FilterCountries
+        <Filter
           regionsList={regions}
           countriesData={data}
           onChange={(data) => handleRegionData(data)}
@@ -88,4 +88,4 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-export default HomeScreen;
+export default Home;

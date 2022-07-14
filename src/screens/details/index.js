@@ -1,12 +1,12 @@
 import { View, Text, Image, SafeAreaView, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
-import globalStyles from "../styles/globalStyles";
-import Header from "../components/Header";
-import BackButton from "../components/BackButton";
+import globalStyles from "../../styles/globalStyles";
+import Header from "../../components/Header";
+import BackButton from "../../components/BackButton";
 import GridList from "react-native-grid-list";
-import Loader from "../components/Loader";
+import Loader from "../../components/Loader";
 
-const DetailedScreen = ({ navigation, route }) => {
+const Details = ({ navigation, route }) => {
   const { countryData, allData } = route.params;
   const [borderCountries, setBorderCountries] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -166,4 +166,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DetailedScreen;
+export default Details;

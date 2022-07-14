@@ -6,7 +6,6 @@ import {
   SafeAreaView,
 } from "react-native";
 import React from "react";
-import images from "../assets";
 import globalStyles from "../styles/globalStyles";
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>Where in the world?</Text>
       <TouchableOpacity style={{ flexDirection: "row" }}>
-        <Image style={globalStyles.icon_sm} source={images.icon_dark} />
+        <Image style={globalStyles.icon_sm} source={require('../assets/images/sleep-mode.png')} />
         <Text>Dark mode</Text>
       </TouchableOpacity>
     </SafeAreaView>

@@ -6,7 +6,6 @@ import {
   SafeAreaView,
 } from "react-native";
 import React from "react";
-import images from "../assets";
 import globalStyles from "../styles/globalStyles";
 
 const BackButton = (props) => {
@@ -17,7 +16,7 @@ const BackButton = (props) => {
         onPress={onPress}
         style={[globalStyles.btnView, styles.container]}
       >
-        <Image style={globalStyles.icon_sm} source={images.icon_back} />
+        <Image style={globalStyles.icon_sm} source={require('../assets/images/left-arrow.png')} />
         <Text style={styles.txt}>Back</Text>
       </TouchableOpacity>
     </SafeAreaView>

@@ -1,7 +1,7 @@
 import DropDownPicker from "react-native-dropdown-picker";
 import React, { useState, useEffect } from "react";
 
-const FilterCountries = (props) => {
+const Filter = (props) => {
   const { regionsList, countriesData, onChange } = props;
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -45,4 +45,4 @@ const FilterCountries = (props) => {
   );
 };
 
-export default FilterCountries;
+export default Filter;

@@ -1,7 +1,6 @@
 import { View, Image, TextInput } from "react-native";
 import React, { useState } from "react";
 import filter from "lodash.filter";
-import images from "../assets";
 
 const Search = (props) => {
   const { data, onSearch } = props;
@@ -44,7 +43,7 @@ const Search = (props) => {
         }}
       >
         <Image
-          source={images.icon_search}
+          source={require('../assets/images/search.png')}
           style={{
             height: 20,
             width: 20,
